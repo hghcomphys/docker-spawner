@@ -1,7 +1,10 @@
 version: '3.5'
 services:
   hub:
-    build: .
+    build: 
+      context: ./
+      dockerfile: hub.Dockerfile
+    image: hub
     container_name: jupyterhub
     ports:
       - "8000:8000"
