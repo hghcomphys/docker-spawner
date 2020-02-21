@@ -8,8 +8,14 @@ services:
       - "8000:8000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      #- hub_data:/srv/jupyterhub
     networks:
       - jupyterhub 
+    environment:
+      DOCKER_NOTEBOOK_DIR: '/home/jovyan'
+
+#volumes:
+  #hub_data
 
 networks: 
   jupyterhub:
