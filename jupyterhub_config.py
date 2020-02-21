@@ -1,3 +1,4 @@
+import os
 
 # dummy for testing. Don't use this in production!
 c.JupyterHub.authenticator_class = 'dummyauthenticator.DummyAuthenticator'
@@ -10,19 +11,19 @@ c.JupyterHub.hub_ip = '0.0.0.0'
 # the hostname/ip that should be used to connect to the hub
 # this is usually the hub container's name
 c.JupyterHub.hub_connect_ip = 'jupyterhub'
+# tell the user containers to connect to our docker network
+c.DockerSpawner.network_name = 'jupyterhub'
 
 # pick a docker image. This should have the same version of jupyterhub
 # in it as our Hub.
-c.DockerSpawner.image = 'd4n1el/tensorflow-2-notebook-gpu' #'jupyter/tensorflow-notebook' #'jupyter/base-notebook'
-c.DockerSpawner.extra_host_config = {'runtime': 'nvidia'}
+c.DockerSpawner.image =  os.environ.get('DOCKER_NOTEBOOL_IMAGE') 
 
-# tell the user containers to connect to our docker network
-c.DockerSpawner.network_name = 'jupyterhub'
+# GPU 
+c.DockerSpawner.extra_host_config = {'runtime': 'nvidia'}
 
 # delete containers when the stop
 c.DockerSpawner.remove = True
 
-import os
 # user data persistence
 notebook_dir = os.environ.get('DOCKER_NOTEBOOK_DIR')
 c.DockerSpawner.notebook_dir = notebook_dir
