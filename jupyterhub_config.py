@@ -5,6 +5,7 @@ c.JupyterHub.authenticator_class = 'dummyauthenticator.DummyAuthenticator'
 
 # launch with docker
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
+c.DummyAuthenticator.password = "testpass"
 
 # we need the hub to listen on all ips when it is in a container
 c.JupyterHub.hub_ip = '0.0.0.0'
