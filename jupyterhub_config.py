@@ -15,6 +15,17 @@ c.JupyterHub.hub_connect_ip = 'jupyterhub'
 # tell the user containers to connect to our docker network
 c.DockerSpawner.network_name = 'jupyterhub'
 
+## Path to SSL certificate file for the public facing interface of the proxy
+#
+#  When setting this, you should also set ssl_key
+c.JupyterHub.ssl_cert = '/srv/jupyterhub/mycert.pem'
+
+## Path to SSL key file for the public facing interface of the proxy
+#
+#  When setting this, you should also set ssl_cert
+c.JupyterHub.ssl_key = '/srv/jupyterhub/mykey.key'
+
+
 # pick a docker image. This should have the same version of jupyterhub
 # in it as our Hub.
 c.DockerSpawner.image =  os.environ.get('DOCKER_NOTEBOOL_IMAGE') 
@@ -29,3 +40,5 @@ c.DockerSpawner.remove = True
 notebook_dir = os.environ.get('DOCKER_NOTEBOOK_DIR')
 c.DockerSpawner.notebook_dir = notebook_dir
 c.DockerSpawner.volumes = { 'jupyterhub-user-{username}': notebook_dir }
+
+
