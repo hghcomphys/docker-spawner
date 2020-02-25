@@ -8,8 +8,9 @@ c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 c.DummyAuthenticator.password = "testpass"
 
 # we need the hub to listen on all ips when it is in a container
-c.JupyterHub.hub_ip = '0.0.0.0'
-c.JupyterHub.port = 8080
+#c.JupyterHub.hub_ip = '0.0.0.0'
+#c.JupyterHub.port = 8080
+
 # the hostname/ip that should be used to connect to the hub
 # this is usually the hub container's name
 c.JupyterHub.hub_connect_ip = 'jupyterhub'
