@@ -9,6 +9,7 @@ c.DummyAuthenticator.password = "testpass"
 
 # we need the hub to listen on all ips when it is in a container
 c.JupyterHub.hub_ip = '0.0.0.0'
+c.JupyterHub.port = 8080
 # the hostname/ip that should be used to connect to the hub
 # this is usually the hub container's name
 c.JupyterHub.hub_connect_ip = 'jupyterhub'
@@ -18,6 +19,17 @@ c.DockerSpawner.network_name = 'jupyterhub'
 # pick a docker image. This should have the same version of jupyterhub
 # in it as our Hub.
 c.DockerSpawner.image =  os.environ.get('DOCKER_NOTEBOOL_IMAGE') 
+c.DockerSpawner.image_whitelist = {
+    "tensorflow-v2-gpu": "notebook:tensorflow-v2-gpu",
+    "tensorflow-v2-cpu": "notebook:tensorflow-v2-cpu",
+}
+# user account inside the conainer
+#c.DockerSpawner.extra_create_kwargs = {'user': 'root'}
+#c.Spawner.environment = {'GRANT_SUDO': 'yes'}
+
+# CPU
+c.Spawner.mem_limit = '2G'
+c.Spawner.cpu_limit = 1
 
 # GPU 
 c.DockerSpawner.extra_host_config = {'runtime': 'nvidia'}
