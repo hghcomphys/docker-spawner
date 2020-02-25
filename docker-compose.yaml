@@ -5,14 +5,14 @@ services:
     image: hub
     container_name: jupyterhub
     ports:
-      - "8000:8000"
+      - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       #- hub_data:/srv/jupyterhub
     networks:
       - jupyterhub 
     environment:
-      DOCKER_NOTEBOOL_IMAGE: notebook-image #'d4n1el/tensorflow-2-notebook-gpu' 
+      DOCKER_NOTEBOOL_IMAGE: notebook:tensorflow-v2-gpu 
       DOCKER_NOTEBOOK_DIR: '/home/user'
 
 #volumes:
