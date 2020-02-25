@@ -19,12 +19,11 @@ c.DockerSpawner.network_name = 'jupyterhub'
 ## Path to SSL certificate file for the public facing interface of the proxy
 #
 #  When setting this, you should also set ssl_key
-c.JupyterHub.ssl_cert = '/srv/jupyterhub/mycert.pem'
-
+#c.JupyterHub.ssl_cert = '/srv/jupyterhub/mycert.pem'
 ## Path to SSL key file for the public facing interface of the proxy
 #
 #  When setting this, you should also set ssl_cert
-c.JupyterHub.ssl_key = '/srv/jupyterhub/mykey.key'
+#c.JupyterHub.ssl_key = '/srv/jupyterhub/mykey.key'
 
 
 # pick a docker image. This should have the same version of jupyterhub
