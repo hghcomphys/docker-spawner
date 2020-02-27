@@ -1,9 +1,12 @@
 FROM d4n1el/tensorflow-2-notebook-gpu 
+#ENV USERNAME=user
+#ENV PASSWORD=123456
 ENV NB_USER=user
 ENV HOME=/home/user
 ENV XDG_CACHE_HOME=/home/user/.cache/
 USER root
 RUN useradd -rm -d /home/user -s /bin/bash user
+#RUN useradd -m -p $(openssl passwd -1 ${PASSWORD}) -s /bin/bash -G sudo ${USERNAME}
 USER user
 WORKDIR /home/user
 CMD [ "start-notebook.sh" ]
