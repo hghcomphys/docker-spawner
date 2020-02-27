@@ -56,8 +56,10 @@ c.Spawner.mem_limit = '2G'
 c.Spawner.cpu_limit = 1
 
 # GPU 
-#c.DockerSpawner.extra_host_config = {'runtime': 'nvidia'}
-
+#c.DockerSpawner.extra_host_config = {'--gpus': '1'}
+#c.DockerSpawner.extra_start_kwargs = { 'gpus': 'all' }
+#c.DockerSpawner.extra_create_kwargs = {'runtime': 'nvidia'}
+c.DockerSpawner.extra_host_config = {'runtime': 'nvidia'}
 
 # delete containers when the stop
 c.DockerSpawner.remove = True
