@@ -1,24 +1,24 @@
 version: '3.5'
+
 services:
   hub:
     build: .
     image: hub
     container_name: jupyterhub
     ports:
-      - "8080:8000"
+      - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       #- hub_data:/srv/jupyterhub
     networks:
-      - jupyterhub 
+      - jupyterhub-network 
     environment:
-      DOCKER_NOTEBOOL_IMAGE: notebook:tensorflow-v2-gpu 
-      DOCKER_NOTEBOOK_DIR: '/home/user'
+      DOCKER_NOTEBOOL_IMAGE: notebook:tensorflow-v2-gpu #jupyter/tensorflow-notebook 
+      DOCKER_NOTEBOOK_DIR: '/home/user' #'/home/jovyan/work' 
 
 #volumes:
   #hub_data
 
 networks: 
-  jupyterhub:
-    external: 
-      name: jupyterhub
+  jupyterhub-network:
+    external: true
