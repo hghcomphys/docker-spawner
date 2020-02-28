@@ -70,3 +70,11 @@ c.DockerSpawner.notebook_dir = notebook_dir
 c.DockerSpawner.volumes = { 'jupyterhub-user-{username}': notebook_dir }
 
 
+# shutdown idle notbooks
+c.JupyterHub.services = [
+    {
+        'name': 'cull-idle',
+        'admin': True,
+        'command': [os.sys.executable, 'cull_idle_servers.py', '--timeout=1800'],
+    }
+]
