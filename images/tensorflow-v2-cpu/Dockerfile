@@ -1,4 +1,5 @@
 FROM jupyter/tensorflow-notebook 
+
 ENV NB_USER=user
 ENV HOME=/home/user
 ENV XDG_CACHE_HOME=/home/user/.cache/

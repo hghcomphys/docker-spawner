@@ -1,5 +1,5 @@
 #!/bin/bash
-for dir in */
+for dir in */ # loop over all directories in the current directory
 do
     img=${dir%*/}   
     echo Build ${img} image as notebook:${img}
