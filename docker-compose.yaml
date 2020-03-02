@@ -13,8 +13,8 @@ services:
     networks:
       - jupyterhub-network 
     environment:
-      DOCKER_NOTEBOOL_IMAGE: notebook:tensorflow-v2-gpu #jupyter/tensorflow-notebook 
-      DOCKER_NOTEBOOK_DIR: '/home/user' #'/home/jovyan/work' 
+      DOCKER_NOTEBOOL_IMAGE: notebook:tensorflow-v2-gpu 
+      DOCKER_NOTEBOOK_DIR: '/home/user' 
 
 #volumes:
   #hub_data
