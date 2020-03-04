@@ -84,4 +84,7 @@ please be careful with the `prune` command, it removes __all unused__ containers
 
 
 ### Snapshots:
-![Alt Text](./snapshots.gif)
+login -> spawn a selected image -> notebook with GPU access
+
+<img src="./snapshots.gif" width="800" height="400" />
+
