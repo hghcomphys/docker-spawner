@@ -83,5 +83,5 @@ please be careful with the `prune` command, it removes __all unused__ containers
 - [https://github.com/jupyterhub/dockerspawner](https://github.com/jupyterhub/dockerspawner)
 
 
-### Snapshots
+### Snapshots:
 ![Alt Text](./snapshots.gif)
