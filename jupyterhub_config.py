@@ -3,7 +3,7 @@ import os
 # user authentication
 c.JupyterHub.authenticator_class = 'dummyauthenticator.DummyAuthenticator'
 c.DummyAuthenticator.password = "testpass"
-c.Authenticator.admin_users = {'hossein'}
+c.Authenticator.admin_users = {'admin'}
 c.JupyterHub.admin_access = True
 #c.Spawner.args = ['--allow-root']
 
