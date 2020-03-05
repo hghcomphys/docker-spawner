@@ -12,8 +12,7 @@ This (incomplete) repo shows how to setup a containerized jupyterhub service on 
 - spawner options for notebook images are available 
 - CPU version is also possible with small changes
 
-
-### Directory structure:
+### Directory and files structure:
 ```
 Jupyterhub-setup
 ├── cull_idle_servers.py
@@ -30,6 +29,10 @@ Jupyterhub-setup
 ├── mykey.key
 └── requirements.txt
 ```
+
+### Flowchart of the current jupyterhub setup on GPU:
+![](docs/flowchart.png)
+
 
 ### Dependencies:
 make sure that the most updated dependencies are install and working flawlessly
@@ -86,5 +89,4 @@ please be careful with the `prune` command, it removes __all unused__ containers
 ### Snapshots:
 login -> spawn a selected image -> notebook with GPU access
 
-<img src="./snapshots.gif" width="800" height="400" />
-
+![](docs/snapshots.gif)
