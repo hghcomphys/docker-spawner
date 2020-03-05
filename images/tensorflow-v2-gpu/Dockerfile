@@ -10,6 +10,7 @@ RUN useradd -rm -d /home/user -s /bin/bash user
 #RUN useradd -m -p $(openssl passwd -1 ${PASSWORD}) -s /bin/bash -G sudo ${USERNAME}
 USER user
 WORKDIR /home/user
+RUN mkdir shared
 CMD [ "start-notebook.sh" ]
 
 #FROM tensorflow/tensorflow:nightly-gpu-py3-jupyter 
