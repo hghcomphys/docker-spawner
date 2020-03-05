@@ -63,7 +63,7 @@ c.DockerSpawner.remove = True
 # user data persistence
 notebook_dir = os.environ.get('DOCKER_NOTEBOOK_DIR')
 c.DockerSpawner.notebook_dir = notebook_dir
-c.DockerSpawner.volumes = { 'jupyterhub-user-{username}': notebook_dir }
+c.DockerSpawner.volumes = { 'jupyterhub-user-{username}': notebook_dir, 'jupyterhub-shared': '/home/user/shared' }
 
 # shutdown idle notbooks
 c.JupyterHub.services = [
