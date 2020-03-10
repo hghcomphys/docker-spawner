@@ -3,7 +3,9 @@ This (incomplete) repo shows how to setup a containerized jupyterhub service on 
 
 ## Current version:
 - is under developement
-- only tested on Ubuntu `16.4` and `18.4`
+- CPU version is also possible with small changes 
+- is sccessfully tested on Ubuntu `16.04` and `18.04`
+- CPU version is tested on `Windows 10`
 - uses dummy authentication
 - user data is persistent
 - hub data is not persistent for development reasons
@@ -11,7 +13,6 @@ This (incomplete) repo shows how to setup a containerized jupyterhub service on 
 - uses Nvidia runtime for GPU
 - spawner calss is dockerspawner
 - spawner options for notebook images are available 
-- CPU version is also possible with small changes
 - shared directory between notebooks
 
 ### Directory and files structure:
