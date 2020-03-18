@@ -1,4 +1,4 @@
-# jupyterhub-setup
+# jupyterhub-dockerspawner
 This (incomplete) repo shows how to setup a containerized jupyterhub service on a single-node GPU server.
 
 ## Current version:
