@@ -9,7 +9,7 @@ c.JupyterHub.admin_access = True
 
 # named server
 c.JupyterHub.allow_named_servers = True
-c.JupyterHub.named_server_limit_per_user = 5
+c.JupyterHub.named_server_limit_per_user = 2
 
 # spawn docker container
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'

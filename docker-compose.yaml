@@ -1,6 +1,7 @@
 version: '3.5'
 
 services:
+  
   hub:
     build: .
     image: hub
@@ -26,7 +27,6 @@ services:
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
-
 
 
 volumes:
