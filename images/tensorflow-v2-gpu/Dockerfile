@@ -4,6 +4,7 @@ ENV NB_USER=user
 ENV HOME=/home/user
 ENV XDG_CACHE_HOME=/home/user/.cache/
 USER root
+# RUN pip install jupyterhub==1.0.0
 RUN useradd -rm -d /home/user -s /bin/bash user
 #ENV USERNAME=user
 #ENV PASSWORD=123456

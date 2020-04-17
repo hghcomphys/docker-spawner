@@ -7,6 +7,10 @@ c.Authenticator.admin_users = {'admin'}
 c.JupyterHub.admin_access = True
 #c.Spawner.args = ['--allow-root']
 
+# named server
+c.JupyterHub.allow_named_servers = True
+c.JupyterHub.named_server_limit_per_user = 5
+
 # spawn docker container
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
@@ -30,11 +34,11 @@ c.DockerSpawner.extra_start_kwargs = { 'network_mode': 'jupyterhub-network' }
 ## Path to SSL certificate file for the public facing interface of the proxy
 #
 #  When setting this, you should also set ssl_key
-c.JupyterHub.ssl_cert = '/srv/jupyterhub/mycert.pem'
+# c.JupyterHub.ssl_cert = '/srv/jupyterhub/mycert.pem'
 ## Path to SSL key file for the public facing interface of the proxy
 #
 #  When setting this, you should also set ssl_cert
-c.JupyterHub.ssl_key = '/srv/jupyterhub/mykey.key'
+# c.JupyterHub.ssl_key = '/srv/jupyterhub/mykey.key'
 
 # pick a docker image. This should have the same version of jupyterhub
 # in it as our Hub.
