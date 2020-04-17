@@ -5,3 +5,4 @@ do
     echo Build ${img} image as notebook:${img}
     docker image build -f ${img}/Dockerfile . -t notebook:${img} #>> /dev/null 
 done
+
