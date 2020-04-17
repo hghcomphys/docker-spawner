@@ -16,8 +16,22 @@ services:
       DOCKER_NOTEBOOL_IMAGE: notebook:tensorflow-v2-gpu 
       DOCKER_NOTEBOOK_DIR: '/home/user' 
 
-#volumes:
-  #hub_data
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    restart: always
+    ports: 
+      - 8000:8000
+      - 9000:9000
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+
+
+volumes:
+  portainer_data:
+  #hub_data:
 
 networks: 
   jupyterhub-network:
