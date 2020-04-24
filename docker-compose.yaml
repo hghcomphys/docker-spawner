@@ -20,7 +20,7 @@ services:
   portainer:
     image: portainer/portainer
     container_name: portainer
-    restart: always
+    #restart: always
     ports: 
       - 8000:8000
       - 9000:9000
