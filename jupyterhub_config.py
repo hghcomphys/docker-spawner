@@ -7,6 +7,9 @@ c.Authenticator.admin_users = {'admin'}
 c.JupyterHub.admin_access = True
 #c.Spawner.args = ['--allow-root']
 
+# set lab as default user interface
+c.Spawner.default_url = '/lab'
+
 # named server
 c.JupyterHub.allow_named_servers = True
 c.JupyterHub.named_server_limit_per_user = 2
