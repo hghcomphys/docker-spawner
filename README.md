@@ -15,6 +15,7 @@ This (incomplete) repo shows how to setup a containerized jupyterhub service on 
 - spawner options for notebook images are available 
 - shared directory between notebooks
 - add portainer service access via `http://localhost:9000`
+- test jupyterlab interface 
 
 ### Directory and files structure:
 ```
